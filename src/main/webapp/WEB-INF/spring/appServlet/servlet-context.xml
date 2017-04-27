@@ -26,6 +26,25 @@
 		<!-- <beans:property name="uploadTempDir" value="c:\\zzz\\temp"></beans:property> -->
 	</beans:bean>
 	
+	<beans:bean id="sampleInterceptor" class="org.zerock.interceptor.SampleInterceptor"></beans:bean>
+	<beans:bean id="loginCheck" class="org.zerock.interceptor.LoginCheckInterceptor"></beans:bean>
+	<beans:bean id="login" class="org.zerock.interceptor.LoginInterceptor"></beans:bean>
+	
+	
+	
+	<interceptors>
+	<interceptor>
+	<mapping path="/board/write"/>
+	<beans:ref bean="loginCheck"/>
+	</interceptor>
+	<interceptor>
+	<mapping path="/login"/>
+	<beans:ref bean="login"/>
+	</interceptor>
+	
+	
+	</interceptors>
+	
 	<context:component-scan base-package="org.zerock.web" />
 	
 	

@@ -33,9 +33,9 @@ public class HomeController {
 	public void ex(){
 		System.out.println(service.getClass().getName());
 		
-		service.doA();
+		/*service.doA();
 		service.doB();
-		service.doC();
+		service.doC();*/
 	}
 	
 	@PostMapping("/uploadText")
